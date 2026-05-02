@@ -46,6 +46,6 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ env.REGISTRY }}/${{ github.repository }}:latest
-            ${{ env.REGISTRY }}/${{ github.repository }}:${{ env.APP_VERSION }}
+            ${{ env.REGISTRY }}/${{ toLower(github.repository) }}:latest
+            ${{ env.REGISTRY }}/${{ toLower(github.repository) }}:${{ env.APP_VERSION }}
 

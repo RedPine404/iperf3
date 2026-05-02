@@ -1,7 +1,7 @@
 
 # iperf3
 
-[![iPerf3 image CI](https://github.com/redpine404/iperf3/actions/workflows/build-image.yml/badge.svg)](https://github.com/nerdalert/iperf3/actions/workflows/build-image.yml)
+[![iPerf3 image CI](https://github.com/redpine404/iperf3/actions/workflows/build-image.yml/badge.svg)](https://github.com/redpine404/iperf3/actions/workflows/build-image.yml)
 
 
 

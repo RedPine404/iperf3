@@ -41,7 +41,7 @@ jobs:
           echo "APP_VERSION=${VERSION}" >> $GITHUB_ENV
 
       - name: Set REPO_LOWERCASE
-        run: echo "REPO_LOWERCASE=${{ toLower(github.repository) }}" >> $GITHUB_ENV
+        run: echo "REPO_LOWERCASE=${GITHUB_REPOSITORY,,}" >> $GITHUB_ENV
 
       - name: Build and push
         uses: docker/build-push-action@v7

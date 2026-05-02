@@ -40,12 +40,15 @@ jobs:
           VERSION=$(curl -s https://api.github.com/repos/${{ github.repository }}/releases/latest | jq -r .tag_name)
           echo "APP_VERSION=${VERSION}" >> $GITHUB_ENV
 
+      - name: Set REPO_LOWERCASE
+        run: echo "REPO_LOWERCASE=${{ toLower(github.repository) }}" >> $GITHUB_ENV
+
       - name: Build and push
         uses: docker/build-push-action@v7
         with:
           context: .
           push: true
           tags: |
-            ${{ env.REGISTRY }}/${{ toLower(github.repository) }}:latest
-            ${{ env.REGISTRY }}/${{ toLower(github.repository) }}:${{ env.APP_VERSION }}
+            ${{ env.REGISTRY }}/${{ env.REPO_LOWERCASE }}:latest
+            ${{ env.REGISTRY }}/${{ env.REPO_LOWERCASE }}:${{ env.APP_VERSION }}
 
